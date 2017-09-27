@@ -309,10 +309,15 @@ var MenuSettings = (function () {
         console.log('ionViewDidLoad MenuSettings');
     };
     MenuSettings.prototype.ionViewDidEnter = function () {
-        this.menuCtrl.toggle("menu3")
-            .then(function (opened) {
-            console.log("Abriu? ", opened);
-        }).catch(function (err) { return console.log("Erro ao abrir menu3! " + err); });
+        this.menuCtrl.enable(false, 'menu3');
+        this.menuCtrl
+            .enable(true, 'menu2')
+            .open();
+        /* this.menuCtrl.toggle("menu3")
+        .then((opened: boolean) => {
+          console.log("Abriu? " , opened);
+        }).catch(err => console.log("Erro ao abrir menu3! " + err)
+        ); */
     };
     return MenuSettings;
 }());

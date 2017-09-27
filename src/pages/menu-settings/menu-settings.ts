@@ -19,11 +19,17 @@ export class MenuSettings {
   }
 
   ionViewDidEnter() {
-    this.menuCtrl.toggle("menu3")
+
+    this.menuCtrl.enable(false, 'menu3');
+    this.menuCtrl
+      .enable(true,'menu2')
+      .open();
+
+    /* this.menuCtrl.toggle("menu3")
     .then((opened: boolean) => {
       console.log("Abriu? " , opened);
     }).catch(err => console.log("Erro ao abrir menu3! " + err)
-    );
+    ); */
   }
 
 }
