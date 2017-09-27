@@ -1,6 +1,6 @@
 import { AboutPage } from './../pages/about/aboutPage';
 import { Component } from '@angular/core';
-import { Platform, NavController } from 'ionic-angular';
+import { Platform, NavController, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -13,8 +13,13 @@ export class MyApp {
   pages: [{title: string, component: any}]
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-
+  constructor(
+    platform: Platform, 
+    statusBar: StatusBar, 
+    splashScreen: SplashScreen,
+    public menuCtrl: MenuController,
+  ) {
+    
     this.pages = [
       {title: 'Home Page', component: HomePage},
       {title: 'AboutPage', component: AboutPage}
@@ -43,6 +48,6 @@ export class MyApp {
   onDrag(): void {
     console.log("Menu dragged!");
   }
-  
+
 }
 

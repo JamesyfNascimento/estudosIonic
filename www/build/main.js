@@ -67,7 +67,7 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/home/james/Git/Ionic/IonicMenu/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n\n    <button ion-button ion-only menuToggle="menu1" start>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n\n    <button ion-button ion-only menuToggle="menu2" end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <button ion-button ion-only menuToggle="menu3" end>\n      <ion-icon name="home"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n\n  <button ion-button block (click)="onAbout()"> About Page</button>\n</ion-content>\n'/*ion-inline-end:"/home/james/Git/Ionic/IonicMenu/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
@@ -188,7 +188,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen) {
+    function MyApp(platform, statusBar, splashScreen, menuCtrl) {
+        this.menuCtrl = menuCtrl;
         this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
         this.pages = [
             { title: 'Home Page', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */] },
@@ -218,10 +219,10 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/james/Git/Ionic/IonicMenu/src/app/app.html"*/'\n<!-- primeiro menu, com todas as configurações -->\n<ion-menu [content] = "myContent" id="menu1" enabled="true" persistent="true" side="left" swipeEnabled="true" (ionOpen)="onOpen()" (ionClose)="onClose()" (ionDrag)="onDrag()">\n    <ion-header>\n        <ion-title>\n            Menu 1\n        </ion-title>\n    </ion-header>\n\n    <ion-content>\n        <ion-list>\n            <button ion-item *ngFor = "let p of pages" (click)="openPage(p)" menuClose>\n                {{ p.title }}\n            </button>\n        </ion-list>\n    </ion-content>\n</ion-menu>\n\n\n<!-- segundo menu -->\n<ion-menu [content] = "myContent" id="menu2" enabled="false" side="right"> \n    <ion-header>\n        <ion-title>\n            Menu 2\n        </ion-title>\n    </ion-header>\n\n    <ion-content>\n        <ion-list>\n            <ion-item>Item 1</ion-item>\n            <ion-item>Item 2</ion-item>\n            <ion-item>Item 3</ion-item>\n            <ion-item>Item 4</ion-item>\n            <ion-item>Item 5</ion-item>\n        </ion-list>\n    </ion-content>\n</ion-menu>\n\n<!--  terceiro menu -->\n<ion-menu [content] = "myContent" id="menu3" side="right">\n    <ion-header>\n        <ion-title>\n            Menu 3\n        </ion-title>\n    </ion-header>\n\n    <ion-content>\n        <ion-list>\n            <ion-item>Menu3 - Item 1</ion-item>\n            <ion-item>Menu3 - Item 2</ion-item>\n            <ion-item>Menu3 - Item 3</ion-item>\n            <ion-item>Menu3 - Item 4</ion-item>\n            <ion-item>Menu3 - Item 5</ion-item>\n            <ion-item>Menu3 - Item 6</ion-item>\n            <ion-item>Menu3 - Item 7</ion-item>\n            <ion-item>Menu3 - Item 8</ion-item>\n            <button ion-item menuClose="menu3">Close</button>\n        </ion-list>\n    </ion-content>\n</ion-menu>\n\n<ion-nav #myContent [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/james/Git/Ionic/IonicMenu/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* MenuController */]) === "function" && _d || Object])
 ], MyApp);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -258,7 +259,7 @@ AboutPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
         selector: 'page-about',template:/*ion-inline-start:"/home/james/Git/Ionic/IonicMenu/src/pages/about/aboutPage.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button ion-only menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>about</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/james/Git/Ionic/IonicMenu/src/pages/about/aboutPage.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["f" /* NavParams */]])
 ], AboutPage);
 
 //# sourceMappingURL=aboutPage.js.map
