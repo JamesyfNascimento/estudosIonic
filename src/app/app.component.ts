@@ -1,5 +1,5 @@
 import { AboutPage } from './../pages/about/aboutPage';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Platform, NavController, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -8,7 +8,8 @@ import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp implements AfterViewInit{
+  
 
   pages: [{title: string, component: any}]
   rootPage:any = HomePage;
@@ -47,6 +48,10 @@ export class MyApp {
 
   onDrag(): void {
     console.log("Menu dragged!");
+  }
+
+  ngAfterViewInit(): void {
+    this.menuCtrl.open('menu1');
   }
 
 }

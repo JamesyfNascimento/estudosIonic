@@ -1,3 +1,4 @@
+import { MenuSettings } from './../pages/menu-settings/menu-settings';
 import { AboutPage } from './../pages/about/aboutPage';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { HomePage } from '../pages/home/home';
   declarations: [
     MyApp,
     HomePage,
-    AboutPage
+    AboutPage,
+    MenuSettings
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { HomePage } from '../pages/home/home';
   entryComponents: [
     MyApp,
     HomePage,
-    AboutPage
+    AboutPage,
+    MenuSettings
   ],
   providers: [
     StatusBar,
