@@ -319,11 +319,15 @@ var MenuSettings = (function () {
         }).catch(err => console.log("Erro ao abrir menu3! " + err)
         ); */
     };
+    MenuSettings.prototype.toggleMenu1Enable = function () {
+        var isEnable = this.menuCtrl.isEnabled('menu1');
+        this.menuCtrl.enable(!isEnable, 'menu1');
+    };
     return MenuSettings;
 }());
 MenuSettings = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'page-menu-settings',template:/*ion-inline-start:"/home/james/Git/Ionic/IonicMenu/src/pages/menu-settings/menu-settings.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <button ion-button ion-only menuToggle="menu1" start>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <ion-title>\n        Menu Settings\n      </ion-title>\n  \n      <button ion-button ion-only menuToggle="menu2" end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <button ion-button ion-only menuToggle="menu3" end>\n        <ion-icon name="home"></ion-icon>\n      </button>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/james/Git/Ionic/IonicMenu/src/pages/menu-settings/menu-settings.html"*/,
+        selector: 'page-menu-settings',template:/*ion-inline-start:"/home/james/Git/Ionic/IonicMenu/src/pages/menu-settings/menu-settings.html"*/'<ion-header>\n    <ion-navbar>\n  \n      <button ion-button ion-only menuToggle="menu1" start>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <ion-title>\n        Menu Settings\n      </ion-title>\n  \n      <button ion-button ion-only menuToggle="menu2" end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <button ion-button ion-only menuToggle="menu3" end>\n        <ion-icon name="home"></ion-icon>\n      </button>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content padding>\n  <button ion-button block (click)="toggleMenu1Enable()">Togle Menu 1 Enabled</button>\n</ion-content>\n'/*ion-inline-end:"/home/james/Git/Ionic/IonicMenu/src/pages/menu-settings/menu-settings.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["d" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["d" /* MenuController */]) === "function" && _c || Object])
 ], MenuSettings);

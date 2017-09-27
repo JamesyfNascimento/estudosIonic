@@ -32,4 +32,9 @@ export class MenuSettings {
     ); */
   }
 
+  toggleMenu1Enable(): void {
+    let isEnable: boolean = this.menuCtrl.isEnabled('menu1');
+    this.menuCtrl.enable(!isEnable, 'menu1');
+  }
+
 }
